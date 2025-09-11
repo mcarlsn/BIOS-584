@@ -5,11 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9643183b-df44-4d6c-87a6-2c3133e75312" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/HW2.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/test.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/week-02-jupyter.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/week-02-jupyter.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/PTSD dataset.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/PTSD_data_dictionary.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/figures/elif.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/figures/grading_scale.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/figures/if.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/figures/ifelse.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/figures/project_flow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/figures/pycharm_shortcut_package.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/figures/python_kernel.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/figures/quiz1_prep_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/figures/quiz1_prep_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/figures/quiz1_prep_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/figures/quiz1_prep_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/figures/quiz1_prep_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/quiz1_preparation.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week-03-boolean-if-else.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/week-03-maths-arrays-random.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/BIOS-584.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/BIOS-584.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/features.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/features.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week-02-variables-lists.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/week-02-variables-lists.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +65,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Merging main",
     "last_opened_file_path": "/Users/madelyncarlson/Documents/GitHub/BIOS-584",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }

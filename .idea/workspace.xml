@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9643183b-df44-4d6c-87a6-2c3133e75312" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/HW7.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week-06-functions-arguments-arrays.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week-08-global-local.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/week-08-global-local.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/week_08_main_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/week_08_main_1.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;mcarlsn&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/NiubilityDiu/BIOS-584.git&quot;,
+    &quot;accountId&quot;: &quot;5c681b08-498d-418d-8400-b976ba568368&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="32FZCyNr1HUVx2F4qWCuSf32yKY" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.HW1.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/madelyncarlson/Documents/GitHub/BIOS-584/Week 6",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Week 6" />
+      <recent name="$PROJECT_DIR$/Week 5/hw5_extension" />
+      <recent name="$PROJECT_DIR$/Week 5" />
+      <recent name="$PROJECT_DIR$/Week 4" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Week 7" />
+      <recent name="$PROJECT_DIR$/Week 6" />
+      <recent name="$PROJECT_DIR$/Week 5" />
+      <recent name="$PROJECT_DIR$/Week 4" />
+      <recent name="$PROJECT_DIR$/Week 1" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-ce6832f46686-7b97d883f26b-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-252.25557.178" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9643183b-df44-4d6c-87a6-2c3133e75312" name="Changes" comment="" />
+      <created>1757018156817</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1757018156817</updated>
+    </task>
+    <servers />
+  </component>
+</project>

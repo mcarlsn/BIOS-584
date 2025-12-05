@@ -1,16 +1,10 @@
-# HW10
-# December 5, 2025
-# Madelyn Carlson
-
-# Import packages
 import os
 import scipy.io as sio
 from self_py_fun.HW10Fun import *
 from sklearn.linear_model import LogisticRegression as LR
 from sklearn.svm import SVC
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis as LDA
-from sklearn.metrics import classification_report
-from sklearn.preprocessing import StandardScaler
+
 
 # In HW7, you have the chance to visualize a truncated EEG dataset stratified by
 # target and non-target stimulus type.
@@ -32,7 +26,7 @@ bp_low = 0.5
 bp_upp = 6
 electrode_num = 16
 # Change the following directory to your own one.
-parent_dir = '/Users/madelyncarlson/Documents/GitHub/BIOS-584'
+parent_dir = '/Users/tma33/Library/CloudStorage/OneDrive-EmoryUniversity/Emory/Rollins SPH/2025/BIOS-584/python_proj'
 parent_data_dir = '{}/data'.format(parent_dir)
 time_index = np.linspace(0, 800, 25)
 electrode_name_ls = ['F3', 'Fz', 'F4', 'T7', 'C3', 'Cz', 'C4', 'T8', 'CP3', 'CP4', 'P3', 'Pz', 'P4', 'PO7', 'PO8', 'Oz']
@@ -64,15 +58,9 @@ eeg_trn_type = np.squeeze(eeg_trn_type, axis=1)
 # you should be able to obtain relevant data files named
 # eeg_frt_signal and eeg_frt_type
 # Write your own code below:
-frt_data_name = '{}_001_BCI_FRT_Truncated_Data_{}_{}'.format(subject_name, bp_low, bp_upp)
-frt_data_dir = '{}/{}.mat'.format(parent_data_dir, frt_data_name)
-eeg_frt_obj = sio.loadmat(frt_data_dir)
-print(eeg_frt_obj.keys())
-eeg_frt_signal = eeg_frt_obj['Signal']
-print(eeg_frt_signal.shape) # (1296, 400)
-eeg_frt_type = eeg_frt_obj['Type']
-print(eeg_frt_type.shape) # (1296, 1)
-eeg_frt_type = np.squeeze(eeg_frt_type, axis=1)
+
+
+
 
 # You have completed the exploratory data analysis in HW7 and HW8.
 # The dataset has been carefully reviewed by Dr. Jane E. Huggins,
@@ -86,40 +74,10 @@ eeg_frt_type = np.squeeze(eeg_frt_type, axis=1)
 # You do not need to modify the parameters of each classifier
 # except for LogisticRegression: set max_iter=1000
 # Write your own code below:
-# first, scale data
-scaler_obj = StandardScaler()
-eeg_trn_signal_scaled = scaler_obj.fit_transform(eeg_trn_signal)
-eeg_frt_signal_scaled = scaler_obj.transform(eeg_frt_signal)
 
-# instantiate models
-logistic_obj = LR(max_iter=1000) # logistic regression
-lda_obj = LDA() # LDA
-svm_obj = SVC(probability=True) # SVM
 
-# train models
-logistic_obj.fit(eeg_trn_signal_scaled, eeg_trn_type) # logistic regression
-lda_obj.fit(eeg_trn_signal_scaled, eeg_trn_type) # LDA
-svm_obj.fit(eeg_trn_signal_scaled, eeg_trn_type) # SVM
 
-# predict (FRT data)
-log_reg_preds = logistic_obj.predict(eeg_frt_signal_scaled)# logistic regression
-lda_preds = lda_obj.predict(eeg_frt_signal_scaled) # LDA
-svm_preds = svm_obj.predict(eeg_frt_signal_scaled) # SVM
 
-y_preds_three_method = np.stack([log_reg_preds, lda_preds, svm_preds], axis=0).T
-print(y_preds_three_method[:5, :])
-
-log_reg_probs = logistic_obj.predict_proba(eeg_frt_signal_scaled)
-print(log_reg_probs[:5, :])
-print()
-
-lda_probs = lda_obj.predict_proba(eeg_frt_signal_scaled)
-print(lda_probs[:5, :])
-print()
-
-svm_probs = svm_obj.predict_proba(eeg_frt_signal_scaled)
-print(svm_probs[:5, :])
-print()
 
 # Step 3: Evaluate model performance on both TRN and FRT files
 # Step 3.1: Prediction accuracy on TRN files
@@ -128,87 +86,24 @@ print()
 # You are asked to generate stimulus-level probability for each method on TRN files,
 # denoted as logistic_y_trn, lda_y_trn, and svm_y_trn.
 # Write your own code below:
-# TRN
-log_reg_trn_preds = logistic_obj.predict(eeg_trn_signal_scaled)
-lda_trn_preds = lda_obj.predict(eeg_trn_signal_scaled)
-svm_trn_preds = svm_obj.predict(eeg_trn_signal_scaled)
 
-model_preds_trn = {
-    "Logistic Regression (TRN)": log_reg_trn_preds,
-    "Linear Discriminant Analysis (TRN)": lda_trn_preds,
-    "Support Vector Machine (TRN)": svm_trn_preds
-}
-for model, preds in model_preds_trn.items():
-    print(f"{model} Results (TRN):")
-    print(classification_report(eeg_trn_type, preds))
-    print("\n")
 
-# using predict_proba
-logistic_y_trn = logistic_obj.predict_proba(eeg_trn_signal_scaled)
-print("Logistic regression:", logistic_y_trn.shape)
-print()
 
-lda_y_trn = lda_obj.predict_proba(eeg_trn_signal_scaled)
-print("LDA:", lda_y_trn.shape)
-print()
 
-svm_y_trn = svm_obj.predict_proba(eeg_trn_signal_scaled)
-print("SVM:", svm_y_trn.shape)
-print()
-
-logistic_y_trn_class1 = logistic_y_trn[:, 1]
-print("Logistic regression:", logistic_y_trn_class1[:5])
-print()
-
-lda_y_trn_class1 = lda_y_trn[:, 1]
-print("LDA:", lda_y_trn_class1[:5])
-
-svc_y_trn_class1 = svm_y_trn[:, 1]
-print("SVM:", svc_y_trn_class1[:5])
-print()
-
-# FRT
-model_preds = {
-    "Logistic Regression": log_reg_preds,
-    "Linear Discriminant Analysis": lda_preds,
-    "Support Vector Machine": svm_preds
-}
-for model, preds in model_preds.items():
-    print(f"{model} Results:")
-    print(classification_report(eeg_frt_type, preds))
-    print("\n")
 
 # Step 3.2: Prediction accuracy on FRT files
 # Similarly, you are asked to generate stimulus-level probability for each method on FRT files,
 # denoted as logistic_y_frt, lda_y_frt, and svm_y_frt.
 # Write your own code below:
-logistic_y_frt = logistic_obj.predict_proba(eeg_frt_signal_scaled)
-print("Logistic regression shape:", logistic_y_frt.shape)
-print()
 
-lda_y_frt = lda_obj.predict_proba(eeg_frt_signal_scaled)
-print("LDA shape:", lda_y_frt.shape)
-print()
 
-svm_y_frt = svm_obj.predict_proba(eeg_frt_signal_scaled)
-print("SVM shape:", svm_y_frt.shape)
-print()
 
-logistic_y_frt_class1 = logistic_y_frt[:, 1]
-print("Logistic regression:", logistic_y_frt_class1[:5])
-print() # observations: slightly lower than LDA. Moderate confidence.
 
-lda_y_frt_class1 = lda_y_frt[:, 1]
-print("LDA:", lda_y_frt_class1[:5])
-print() # observations: more confident
-
-svm_y_frt_class1 = svm_y_frt[:, 1]
-print("SVM:", svm_y_frt_class1[:5])
-print() # observations: high precision but low recall
 
 # Step 4: Convert binary classification probability to character-level accuracy
 # This involves advanced data manipulation, so you do not need to write any new code.
 # Please run the following code to view the final results.
+'''
 eeg_trn_code = eeg_trn_obj['Code']
 eeg_frt_code = eeg_frt_obj['Code']
 char_frt = convert_raw_char_to_alphanumeric_stype(eeg_frt_obj['Text'])
@@ -281,6 +176,7 @@ print(svm_trn_accuracy)
 print(logistic_frt_accuracy)
 print(lda_frt_accuracy)
 print(svm_frt_accuracy)
+'''
 
 # Remember to answer two questions below:
 
@@ -294,36 +190,5 @@ print(svm_frt_accuracy)
 # svm_trn_accuracy = np.mean(svm_letter_mat_trn == np.array(list(char_trn))[:, np.newaxis], axis=0)
 # svm_frt_accuracy = np.mean(svm_letter_mat_frt == np.array(list(char_frt))[:, np.newaxis], axis=0)
 
-# Response:
-# Row 122: This line computes character-level accuracy for the logistic regression predictions on the training set,
-# giving proportion of correctly predicted letters for each position. More details: First, it is converting the string
-# of training characters 'THE0QUICK0BROWN0FOX' into a list of individual characters. then, np.array(list(char_trn))
-# converts that list to a 1D numpy array of characters. logistic_letter_mat_trn == (etc..) is comparing each element of
-# logistic_letter_mat_trn (i.e., predicted letters for each stimulus sequence) with the true letters. The result is a
-# boolean array where True if prediction matches the true character and false otherwise).
-
-# Row 131: This line of code calculate the accuracy of logistic regression on the training set, and gives the fraction
-# of correctly predicted characters for each sequence position.
-
-# Row 141: The same operation as the logistic regression, but for LDA predictions on the training set. This line
-# calculates the character-level accuracy for LDA on the training set, telling us what fraction of predicted characters
-# match the true characters in each sequence
-
-# Row 150: This line calculates character-level accuracy of LDA on FRT testing data, showing how well the model
-# predicted each character in the testing sequences
-
-# Row 160: Calculates the SVM character-level accuracy on the training set, , showing how well SVM predicted each
-# character in the training sequences
-
-# Row 169: Measures how accurately SVM predicts each character in the testing dataset, giving you character-level
-# accuracy for each sequence.
-
 # Step 5: Summary
 # Which method performs the best? Why?
-
-
-# Looking at the output, you can compare the averages for logistic regression, LDA, and SVM FRT accuracy.
-# logistic_frt_accuracy: [0.66666667 0.92592593 0.92592593 1] (average: 0.8796); lda_frt_accuracy: [0.7037037 0.85185185
-# 0.92592593 0.96296296] (average: 0.8611), and svm_frt_accuracy: [0.66666667 0.88888889 0.88888889 1] (average: 0.8611)
-# Logistic Regression has the highest average character-level accuracy on the FRT (testing) data.More consistent overall
-# LDA and SVM are slightly lower, and SVM shows more variability. some letters predicted perfectly, others lower
